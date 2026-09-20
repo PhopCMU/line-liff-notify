@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   if (!text?.trim())
     return NextResponse.json({ error: "missing text" }, { status: 400 });
 
-  // 1) verify → ได้ userId ที่เชื่อถือได้ (ปลอมไม่ได้)
+  // 1) verify -> ได้ userId ที่เชื่อถือได้ (ปลอมไม่ได้)
   let lineUserId: string;
   try {
     const claims = await verifyIdToken(idToken);
